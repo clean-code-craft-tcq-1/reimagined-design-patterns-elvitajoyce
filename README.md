@@ -8,3 +8,46 @@ Give a summary description of Four design patterns that you choose from the foll
 - Write a short summary for each of the four patterns, about half a page for each pattern (rather less than more). 
 
 > Do not add diagrams, and do not try to give a complete description of the patterns as found in the books. Rather think of how you would explain the essential ideas of these patterns in a few sentences to a colleague while drinking coffee.
+
+1. Adapter pattern -> Getting the interface you want from the interface you have. 
+Adapater pattern is a structural design pattern designed to enable two or more previously incompatible objects to interact with each other
+An Adapter wraps an existing class with a new interface so that it becomes compatible with the client’s interface.
+The main motive behind using this pattern is to convert an existing interface into another interface that the client expects. 
+It's usually implemented once the application is designed.
+
+Pros: 1.Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+	  2.Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code, 
+	  as long as they work with the adapters through the client interface.
+Cons: The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. 
+	  Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
+	  
+
+2. Observer pattern
+Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified, 
+its depenedent objects are to be notified automatically. Observer pattern falls under behavioral pattern category.
+
+Pros: 1. It is quite flexible to set up the relationship at runtime between the objects.
+2. With the Open/Closed Principle's help, we can introduce the new subscriber class without making a change in the publisher's code.
+Cons: Subscribers are notified in random order.
+
+3. Prototype pattern
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+Pros:  1. You can clone objects without coupling to their concrete classes.
+	   2. You can get rid of repeated initialization code in favor of cloning pre-built prototypes.
+       3. You can produce complex objects more conveniently.
+Cons: Cloning complex objects that have circular references might be very tricky.
+
+4. Memento pattern
+Memento is a behavioral design pattern that lets you save and restore the previous state of an object without revealing the details of its implementation.
+This pattern will be used in situations where some actions are undoable, therefore requiring to rollback to a previous state. 
+Practically, the object whose state needs to be saved is called an Originator.
+The Caretaker is the object triggering the save and restore of the state, which is called the Memento.
+Pros: 	1. You can produce snapshots of the object’s state without violating its encapsulation.
+		2. You can simplify the originator’s code by letting the caretaker maintain the history of the originator’s state.
+Cons: 1. The app might consume lots of RAM if clients create mementos too often.
+	  2. Caretakers should track the originator’s lifecycle to be able to destroy obsolete mementos.
+	  3. Most dynamic programming languages, such as PHP, Python and JavaScript, can’t guarantee that the state within the memento stays untouched.
+
+
+
+
